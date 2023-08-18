@@ -1,0 +1,25 @@
+const sharp = require("sharp");
+const path = require('path');
+const fs = require('fs');
+
+sharp.cache(false);
+
+const resizeImage = (req, res, next) => {
+    try {
+        const ref = path.parse(req.file.originalname).name;
+        console.log(req.file);
+        sharp(req.file.path)
+            .resize({
+                width: 500,
+                height: 400
+            })
+            .webp({ quality: 100 })
+            .toFile('images/' + ref + ".webp")
+            .then(() => fs.unlink(req.file.path, (e) => console.log(e)));
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+module.exports = resizeImage

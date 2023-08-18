@@ -1,12 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const sharp = require('sharp');
-/* const cors = require('cors'); */
 
 app.use(express.json())
-
-/* app.use(cors({ origin: true })); // enable origin cors */
 
 const mongoose = require('mongoose');
 
