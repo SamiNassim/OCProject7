@@ -1,22 +1,21 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const booksRoutes = require('./routes/book');
+const userRoutes = require('./routes/user');
+require('dotenv').config();
 
 app.use(express.json())
 
 const mongoose = require('mongoose');
 
-const booksRoutes = require('./routes/book');
-const userRoutes = require('./routes/user');
-
-mongoose.connect('mongodb+srv://snbwcs:ChV3u1ye1qy312wq@occluster.ze4lscq.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
-
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
