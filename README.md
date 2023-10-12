@@ -1,10 +1,7 @@
-# Mon vieux Grimoire
+# OCProject 7 : Mon vieux Grimoire
 
+Le projet 7 de ma formation de développeur web : un site de notation de livres.</br>
+La partie frontend étant déjà créé, c'était un projet entièrement focus sur le backend.</br>
+Il fallait créer une API en fonction d'un cahier des charges, plusieurs routes pour plusieurs fonctionnalités tels que l'affichage, l'ajout, la suppression ou la mise à jour des livres dans la base de donnée.</br>
 
-## Comment lancer le projet ? 
-
-### Avec npm
-
-Faites la commande `npm install` pour installer les dépendances puis `npm start` pour lancer le projet. 
-
-Le projet a été testé sur node 19. 
+Technologies utilisées : NodeJS, ExpressJS, MongoDB.
